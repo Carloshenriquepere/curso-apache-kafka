@@ -2,9 +2,7 @@ package com.v1.str_producer.config;
 
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.producer.ProducerConfig;
-import org.apache.kafka.common.protocol.types.Field;
 import org.apache.kafka.common.serialization.StringSerializer;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,8 +16,8 @@ import java.util.HashMap;
 @Configuration
 public class StringProducerFactoryConfig {
 
-    @Autowired
-    private KafkaProperties properties;
+
+    private final KafkaProperties properties;
 
     @Bean
     public ProducerFactory<String, String> producerFactory(){
