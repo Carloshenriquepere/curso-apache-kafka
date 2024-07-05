@@ -1,7 +1,7 @@
-package com.v1.payment_service.resouce.impl;
+package com.v1.payment_service.resource.impl;
 
 import com.v1.payment_service.model.Payment;
-import com.v1.payment_service.resouce.PaymentResource;
+import com.v1.payment_service.resource.PaymentResource;
 import com.v1.payment_service.service.PaymentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping(value = "/payment")
+@RequestMapping(value = "/payments")
 public class PaymentResourceImpl implements PaymentResource {
 
     private final PaymentService paymentService;

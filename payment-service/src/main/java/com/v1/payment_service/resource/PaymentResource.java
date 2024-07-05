@@ -1,4 +1,4 @@
-package com.v1.payment_service.resouce;
+package com.v1.payment_service.resource;
 
 import com.v1.payment_service.model.Payment;
 import org.springframework.http.ResponseEntity;
