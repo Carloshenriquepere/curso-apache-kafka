@@ -29,13 +29,31 @@ services:
     image: obsidiandynamics/kafdrop:latest
     networks:
       - broker-kafka
-    depends_on:
-      - kafka
+    # depends_on:
+    #   - kafka
     ports:
       - "19000:9000"
     environment:
       KAFKA_BROKERCONNECT: kafka:29092
 
+  payment:
+    image: carloshenriquepereirasoares/payment-service:teste
+    networks:
+      - broker-kafka
+    depends_on:
+      - kafka
+    ports:
+      - "8000:8000"
+    
+
+  consumer:
+    image: carloshenriquepereirasoares/json-consumer:teste
+    networks:
+      - broker-kafka
+    depends_on:
+      - kafka
+      - payment
+    
 networks:
   broker-kafka:
     driver: bridge
